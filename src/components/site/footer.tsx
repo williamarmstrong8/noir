@@ -1,8 +1,10 @@
+import { cacheLife } from "next/cache";
 import { Wordmark } from "@/components/site/wordmark";
 import { site } from "@/data/site";
 
 async function copyrightYear() {
   "use cache";
+  cacheLife("max");
   return new Date().getFullYear();
 }
 
