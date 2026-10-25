@@ -102,6 +102,9 @@ export const site = {
   // TODO: replace with your production domain.
   url: "https://example.com",
   promise: "Preview in 48 hours. Live in 7 days.",
+  title: "Websites for local businesses",
+  description:
+    "Fast, good-looking websites that bring in customers. Fixed prices from $1,500. Preview in 48 hours. Live in 7 days.",
 };
 
 // TODO: replace every project below with your real work (4-6 entries).

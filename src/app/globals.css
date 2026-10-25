@@ -54,6 +54,7 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-signal: var(--signal);
+  --color-signal-foreground: var(--signal-foreground);
   --color-surface: var(--surface);
 
   --font-sans: var(--font-geist-sans);
@@ -167,16 +168,4 @@
       transition-duration: 0s !important;
     }
   }
-}
-
-/* Hero entrance runs in CSS so it paints before hydration and doesn't delay LCP. */
-@keyframes rise {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-}
-
-@utility animate-rise {
-  animation: rise 500ms ease-out both;
 }

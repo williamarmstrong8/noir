@@ -6,7 +6,7 @@ type BrowserFrameProps = {
   alt: string;
   url: string;
   sizes: string;
-  preload?: boolean;
+  fetchPriority?: "high";
   className?: string;
 };
 
@@ -15,7 +15,7 @@ export function BrowserFrame({
   alt,
   url,
   sizes,
-  preload,
+  fetchPriority,
   className,
 }: BrowserFrameProps) {
   return (
@@ -36,7 +36,8 @@ export function BrowserFrame({
           alt={alt}
           fill
           sizes={sizes}
-          preload={preload}
+          fetchPriority={fetchPriority}
+          loading={fetchPriority ? "eager" : undefined}
           className="object-cover object-top-left"
         />
       </div>

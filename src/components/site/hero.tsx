@@ -13,11 +13,8 @@ export function Hero() {
       aria-labelledby="hero-title"
       className="container-page pt-20 pb-20 lg:pt-32 lg:pb-32"
     >
-      <p className="text-label animate-rise">Web design & development</p>
-      <h1
-        id="hero-title"
-        className="text-display mt-6 max-w-[14ch] animate-rise"
-      >
+      <p className="text-label">Web design & development</p>
+      <h1 id="hero-title" className="text-display mt-6 max-w-[14ch]">
         {site.positioning.split(" ").map((word, i) => (
           // Keep hyphenated words whole so "good-looking" never splits.
           <Fragment key={i}>
@@ -30,7 +27,7 @@ export function Hero() {
           </Fragment>
         ))}
       </h1>
-      <div className="mt-10 animate-rise [animation-delay:120ms]">
+      <div className="mt-10">
         <p className="text-body">{site.heroLine}</p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <BookButton label="Book a 15-min call" />
@@ -46,13 +43,13 @@ export function Hero() {
         </div>
         <p className="mt-6 text-sm text-muted-foreground">{site.promise}</p>
       </div>
-      <div className="mt-16 animate-rise [animation-delay:240ms] lg:mt-24">
+      <div className="mt-16 lg:mt-24">
         <BrowserFrame
           src={featured.image.src}
           alt={featured.image.alt}
           url={featured.url}
           sizes="(min-width: 1248px) 1200px, calc(100vw - 48px)"
-          preload
+          fetchPriority="high"
           className="aspect-[4/3] sm:aspect-[16/9]"
         />
       </div>

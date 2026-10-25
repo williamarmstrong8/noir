@@ -2,6 +2,7 @@ import { Faq } from "@/components/site/faq";
 import { FinalCta } from "@/components/site/final-cta";
 import { Footer } from "@/components/site/footer";
 import { Hero } from "@/components/site/hero";
+import { JsonLd } from "@/components/site/json-ld";
 import { Nav } from "@/components/site/nav";
 import { Pricing } from "@/components/site/pricing";
 import { Process } from "@/components/site/process";
@@ -11,6 +12,13 @@ import { Work } from "@/components/site/work";
 export default function Home() {
   return (
     <>
+      <JsonLd />
+      <a
+        href="#top"
+        className="sr-only z-50 rounded-lg bg-signal px-4 py-2 text-signal-foreground focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
+      >
+        Skip to content
+      </a>
       <Nav />
       <main id="top">
         <Hero />
