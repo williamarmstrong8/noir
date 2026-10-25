@@ -16,10 +16,8 @@ export function Faq() {
           <Accordion type="single" collapsible className="border-y">
             {faqs.map((faq) => (
               <AccordionItem key={faq.question} value={faq.question}>
-                <AccordionTrigger className="items-center py-6 text-lg font-medium hover:no-underline hover:text-signal">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-body pb-6">
+                <AccordionTrigger>{faq.question}</AccordionTrigger>
+                <AccordionContent className="text-body">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

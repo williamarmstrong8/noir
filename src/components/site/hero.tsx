@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { ArrowDown } from "lucide-react";
 import { BookButton } from "@/components/site/book-button";
-import { BrowserFrame } from "@/components/site/browser-frame";
+import { BrowserFrame, fullWidthSizes } from "@/components/site/browser-frame";
 import { Button } from "@/components/ui/button";
 import { projects, site } from "@/data/site";
 
@@ -48,7 +48,7 @@ export function Hero() {
           src={featured.image.src}
           alt={featured.image.alt}
           url={featured.url}
-          sizes="(min-width: 1248px) 1200px, calc(100vw - 48px)"
+          sizes={fullWidthSizes}
           fetchPriority="high"
           className="aspect-[4/3] sm:aspect-[16/9]"
         />

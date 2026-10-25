@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
+export const fullWidthSizes = "(min-width: 1248px) 1200px, calc(100vw - 48px)";
+
 type BrowserFrameProps = {
   src: string;
   alt: string;

@@ -27,17 +27,14 @@ export function MobileNav() {
         </Button>
       </SheetTrigger>
       <SheetContent
-        side="top"
-        className="border-border bg-background px-6 pt-5 pb-8"
+        className="bg-background px-6 pt-5 pb-8"
         onCloseAutoFocus={(event) => {
           const id = target.current;
           if (!id) return;
           event.preventDefault();
           target.current = null;
           history.replaceState(null, "", `#${id}`);
-          requestAnimationFrame(() =>
-            document.getElementById(id)?.scrollIntoView(),
-          );
+          setTimeout(() => document.getElementById(id)?.scrollIntoView());
         }}
       >
         <SheetTitle className="text-[15px] font-semibold tracking-[-0.02em]">

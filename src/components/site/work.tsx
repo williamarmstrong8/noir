@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
-import { BrowserFrame } from "@/components/site/browser-frame";
+import { BrowserFrame, fullWidthSizes } from "@/components/site/browser-frame";
 import { Section } from "@/components/site/section";
 import { Badge } from "@/components/ui/badge";
 import { projects, sections, type Project } from "@/data/site";
@@ -44,7 +44,7 @@ function ProjectCard({
         url={project.url}
         sizes={
           featured
-            ? "(min-width: 1248px) 1200px, calc(100vw - 48px)"
+            ? fullWidthSizes
             : "(min-width: 1248px) 588px, (min-width: 768px) calc(50vw - 36px), calc(100vw - 48px)"
         }
         className={featured ? "md:aspect-[2/1]" : undefined}
@@ -55,9 +55,7 @@ function ProjectCard({
             <h3 className="text-xl font-semibold tracking-[-0.02em]">
               {project.name}
             </h3>
-            <Badge variant="outline" className="text-muted-foreground">
-              {project.kind}
-            </Badge>
+            <Badge className="text-muted-foreground">{project.kind}</Badge>
           </div>
           <p className="mt-2 max-w-[60ch] text-muted-foreground">
             {project.outcome}
