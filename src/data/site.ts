@@ -93,6 +93,8 @@ export const site = {
   // TODO: confirm brand name. Taken from the project folder name.
   name: "Armstrong Design Agency",
   positioning: "Fast, good-looking websites that bring in customers.",
+  heroLine:
+    "I design and build sites for local businesses. You get a clear price and a site that works.",
   // TODO: replace with your real Cal.com link.
   bookingUrl: "https://cal.com/TODO/15min",
   // TODO: replace with your real contact email.
@@ -111,7 +113,10 @@ export const projects: Project[] = [
     outcome: "TODO: One line on the outcome or problem solved.",
     kind: "Concept",
     tags: ["Next.js", "Booking", "SEO"],
-    image: { src: "/work/project-1.svg", alt: "TODO: Homepage of project one" },
+    image: {
+      src: "/work/project-1.webp",
+      alt: "TODO: Homepage of project one",
+    },
   },
   {
     name: "TODO: Project two",
@@ -119,7 +124,10 @@ export const projects: Project[] = [
     outcome: "TODO: One line on the outcome or problem solved.",
     kind: "Concept",
     tags: ["Next.js", "SEO"],
-    image: { src: "/work/project-2.svg", alt: "TODO: Homepage of project two" },
+    image: {
+      src: "/work/project-2.webp",
+      alt: "TODO: Homepage of project two",
+    },
   },
   {
     name: "TODO: Project three",
@@ -128,7 +136,7 @@ export const projects: Project[] = [
     kind: "Concept",
     tags: ["Next.js", "Booking"],
     image: {
-      src: "/work/project-3.svg",
+      src: "/work/project-3.webp",
       alt: "TODO: Homepage of project three",
     },
   },
@@ -138,7 +146,10 @@ export const projects: Project[] = [
     outcome: "TODO: One line on the outcome or problem solved.",
     kind: "Concept",
     tags: ["Next.js", "Lead capture"],
-    image: { src: "/work/project-4.svg", alt: "TODO: Homepage of project four" },
+    image: {
+      src: "/work/project-4.webp",
+      alt: "TODO: Homepage of project four",
+    },
   },
   {
     name: "TODO: Project five",
@@ -146,7 +157,10 @@ export const projects: Project[] = [
     outcome: "TODO: One line on the outcome or problem solved.",
     kind: "Concept",
     tags: ["Next.js", "SEO"],
-    image: { src: "/work/project-5.svg", alt: "TODO: Homepage of project five" },
+    image: {
+      src: "/work/project-5.webp",
+      alt: "TODO: Homepage of project five",
+    },
   },
 ];
 
