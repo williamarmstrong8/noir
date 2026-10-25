@@ -211,7 +211,7 @@ export const tiers: Tier[] = [
   {
     name: "Starter",
     price: "$1,500",
-    summary: "One page that does the job. Live in 5 days.",
+    summary: "One page that does the job.",
     includes: [
       "One custom page",
       "Mobile and desktop layouts",
