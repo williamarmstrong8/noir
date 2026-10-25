@@ -154,5 +154,29 @@
     html {
       scroll-behavior: auto;
     }
+
+    [data-reveal] {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0s !important;
+      transition-duration: 0s !important;
+    }
   }
+}
+
+/* Hero entrance runs in CSS so it paints before hydration and doesn't delay LCP. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@utility animate-rise {
+  animation: rise 500ms ease-out both;
 }

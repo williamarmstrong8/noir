@@ -34,6 +34,61 @@ export type Faq = {
   answer: string;
 };
 
+export type SectionId = "work" | "services" | "pricing" | "process" | "faq";
+
+export type SectionCopy = {
+  id: SectionId;
+  number: string;
+  label: string;
+  title: string;
+  intro?: string;
+  inNav: boolean;
+};
+
+export const sections: Record<SectionId, SectionCopy> = {
+  work: {
+    id: "work",
+    number: "01",
+    label: "Work",
+    title: "Selected work.",
+    intro: "A few things I've built.",
+    inNav: true,
+  },
+  services: {
+    id: "services",
+    number: "02",
+    label: "Services",
+    title: "What I do.",
+    intro: "Everything a local business needs to get found and booked.",
+    inNav: true,
+  },
+  pricing: {
+    id: "pricing",
+    number: "03",
+    label: "Pricing",
+    title: "Simple pricing.",
+    intro: "Fixed prices. No surprises.",
+    inNav: true,
+  },
+  process: {
+    id: "process",
+    number: "04",
+    label: "Process",
+    title: "How it works.",
+    intro: "Three steps. No long meetings.",
+    inNav: true,
+  },
+  faq: {
+    id: "faq",
+    number: "05",
+    label: "FAQ",
+    title: "Questions.",
+    inNav: false,
+  },
+};
+
+export const navItems = Object.values(sections).filter((s) => s.inNav);
+
 export const site = {
   // TODO: confirm brand name. Taken from the project folder name.
   name: "Armstrong Design Agency",
