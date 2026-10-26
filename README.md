@@ -67,3 +67,4 @@ Frames crop from the top left, so the important part of the page should sit ther
 - One radius (12px) everywhere. Type scale utilities: `text-display`, `text-heading`, `text-body`, `text-label`.
 - Scroll reveals use [`src/components/motion/reveal.tsx`](src/components/motion/reveal.tsx) and switch off under `prefers-reduced-motion`.
 - The OG image, Twitter image and favicon are generated from `site` at build time ([`src/lib/og.tsx`](src/lib/og.tsx)), using Geist fonts in `src/assets/fonts` (SIL Open Font License).
+# noir
