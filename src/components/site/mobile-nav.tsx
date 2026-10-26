@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { Menu } from "lucide-react";
 import { BookButton } from "@/components/site/book-button";
+import { Logo } from "@/components/site/logo";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -11,7 +12,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { navItems, site } from "@/data/site";
+import { navItems } from "@/data/site";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -37,8 +38,8 @@ export function MobileNav() {
           setTimeout(() => document.getElementById(id)?.scrollIntoView());
         }}
       >
-        <SheetTitle className="text-[15px] font-semibold tracking-[-0.02em]">
-          {site.name}
+        <SheetTitle>
+          <Logo className="h-7 w-auto" />
         </SheetTitle>
         <SheetDescription className="sr-only">Site navigation</SheetDescription>
         <nav aria-label="Mobile">

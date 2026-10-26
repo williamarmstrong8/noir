@@ -47,7 +47,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         {children}
         {process.env.VERCEL && <Analytics />}
         <noscript>
-          <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>
+          <style>{`[data-reveal],.demo-in{opacity:1!important;transform:none!important}[data-untyped]{visibility:visible!important}`}</style>
         </noscript>
       </body>
     </html>

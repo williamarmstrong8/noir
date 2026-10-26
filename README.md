@@ -1,4 +1,4 @@
-# Armstrong Design Agency
+# Noir
 
 Single-page sales site. Next.js 16 (App Router), Tailwind v4, shadcn/ui, Motion. Deploys to Vercel.
 
@@ -16,7 +16,6 @@ Search the repo for `TODO`. Every placeholder is marked. The ones that matter mo
 - `site.bookingUrl`: your Cal.com link. Every booking button reads it.
 - `site.email`: shown in the final CTA and footer.
 - `site.url`: your production domain. Used for the canonical URL, sitemap, robots and OG tags.
-- `site.name`: confirm the brand name.
 - `projects`: your real work and screenshots.
 - `faqs`, `services`, `tiers`: confirm the policies and inclusions match what you sell.
 

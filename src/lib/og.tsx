@@ -2,6 +2,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { cacheLife } from "next/cache";
 import { ImageResponse } from "next/og";
+import { logoPath } from "@/components/site/logo";
 import { site } from "@/data/site";
 
 export const ogSize = { width: 1200, height: 630 };
@@ -66,17 +67,9 @@ export async function renderOgImage() {
           fontSize: 26,
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-          <div
-            style={{
-              width: 14,
-              height: 14,
-              borderRadius: 4,
-              background: "#ff6b2c",
-            }}
-          />
-          {site.name}
-        </div>
+        <svg width={112} height={48} viewBox="0 0 938 401">
+          <path fill="#fafafa" fillRule="evenodd" d={logoPath} />
+        </svg>
         <div
           style={{
             display: "flex",

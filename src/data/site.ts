@@ -90,8 +90,7 @@ export const sections: Record<SectionId, SectionCopy> = {
 export const navItems = Object.values(sections).filter((s) => s.inNav);
 
 export const site = {
-  // TODO: confirm brand name. Taken from the project folder name.
-  name: "Armstrong Design Agency",
+  name: "Noir",
   positioning: "Fast, good-looking websites that bring in customers.",
   heroLine:
     "I design and build sites for local businesses. You get a clear price and a site that works.",
@@ -107,7 +106,7 @@ export const site = {
     "Fast, good-looking websites that bring in customers. Fixed prices from $1,500. Preview in 48 hours. Live in 7 days.",
 };
 
-// TODO: replace every project below with your real work (4-6 entries).
+// TODO: replace every project below with your real work (4-6 entries, even counts fill the grid).
 // Label anything that isn't paid client work "Personal project" or "Concept".
 export const projects: Project[] = [
   {
@@ -152,17 +151,6 @@ export const projects: Project[] = [
     image: {
       src: "/work/project-4.webp",
       alt: "TODO: Homepage of project four",
-    },
-  },
-  {
-    name: "TODO: Project five",
-    url: "https://example.com",
-    outcome: "TODO: One line on the outcome or problem solved.",
-    kind: "Concept",
-    tags: ["Next.js", "SEO"],
-    image: {
-      src: "/work/project-5.webp",
-      alt: "TODO: Homepage of project five",
     },
   },
 ];

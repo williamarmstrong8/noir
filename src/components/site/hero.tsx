@@ -1,13 +1,11 @@
 import { Fragment } from "react";
 import { ArrowDown } from "lucide-react";
 import { BookButton } from "@/components/site/book-button";
-import { BrowserFrame, fullWidthSizes } from "@/components/site/browser-frame";
+import { CodeDemo } from "@/components/site/code-demo";
 import { Button } from "@/components/ui/button";
-import { projects, site } from "@/data/site";
+import { site } from "@/data/site";
 
 export function Hero() {
-  const featured = projects[0];
-
   return (
     <section
       aria-labelledby="hero-title"
@@ -44,14 +42,7 @@ export function Hero() {
         <p className="mt-6 text-sm text-muted-foreground">{site.promise}</p>
       </div>
       <div className="mt-16 lg:mt-24">
-        <BrowserFrame
-          src={featured.image.src}
-          alt={featured.image.alt}
-          url={featured.url}
-          sizes={fullWidthSizes}
-          fetchPriority="high"
-          className="aspect-[4/3] sm:aspect-[16/9]"
-        />
+        <CodeDemo />
       </div>
     </section>
   );

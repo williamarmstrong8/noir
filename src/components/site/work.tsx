@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
-import { BrowserFrame, fullWidthSizes } from "@/components/site/browser-frame";
+import { BrowserFrame } from "@/components/site/browser-frame";
 import { Section } from "@/components/site/section";
 import { Badge } from "@/components/ui/badge";
 import { projects, sections, type Project } from "@/data/site";
@@ -10,13 +10,8 @@ export function Work() {
     <Section copy={sections.work}>
       <ul className="grid grid-cols-1 gap-x-6 gap-y-16 md:grid-cols-2 lg:gap-y-20">
         {projects.map((project, i) => (
-          <Reveal
-            key={project.name}
-            as="li"
-            index={i === 0 ? 0 : (i - 1) % 2}
-            className={i === 0 ? "md:col-span-2" : undefined}
-          >
-            <ProjectCard project={project} featured={i === 0} />
+          <Reveal key={project.name} as="li" index={i % 2}>
+            <ProjectCard project={project} />
           </Reveal>
         ))}
       </ul>
@@ -24,13 +19,7 @@ export function Work() {
   );
 }
 
-function ProjectCard({
-  project,
-  featured,
-}: {
-  project: Project;
-  featured: boolean;
-}) {
+function ProjectCard({ project }: { project: Project }) {
   return (
     <a
       href={project.url}
@@ -42,12 +31,7 @@ function ProjectCard({
         src={project.image.src}
         alt={project.image.alt}
         url={project.url}
-        sizes={
-          featured
-            ? fullWidthSizes
-            : "(min-width: 1248px) 588px, (min-width: 768px) calc(50vw - 36px), calc(100vw - 48px)"
-        }
-        className={featured ? "md:aspect-[2/1]" : undefined}
+        sizes="(min-width: 1248px) 588px, (min-width: 768px) calc(50vw - 36px), calc(100vw - 48px)"
       />
       <div className="mt-6 flex items-start justify-between gap-6">
         <div>

@@ -1,25 +1,13 @@
 import Image from "next/image";
-import { cn } from "@/lib/utils";
-
-export const fullWidthSizes = "(min-width: 1248px) 1200px, calc(100vw - 48px)";
 
 type BrowserFrameProps = {
   src: string;
   alt: string;
   url: string;
   sizes: string;
-  fetchPriority?: "high";
-  className?: string;
 };
 
-export function BrowserFrame({
-  src,
-  alt,
-  url,
-  sizes,
-  fetchPriority,
-  className,
-}: BrowserFrameProps) {
+export function BrowserFrame({ src, alt, url, sizes }: BrowserFrameProps) {
   return (
     <figure className="overflow-hidden rounded-lg border bg-surface">
       <div className="flex h-10 items-center gap-4 border-b px-4">
@@ -32,14 +20,12 @@ export function BrowserFrame({
           {url.replace(/^https?:\/\//, "")}
         </span>
       </div>
-      <div className={cn("relative aspect-[16/10]", className)}>
+      <div className="relative aspect-[16/10]">
         <Image
           src={src}
           alt={alt}
           fill
           sizes={sizes}
-          fetchPriority={fetchPriority}
-          loading={fetchPriority ? "eager" : undefined}
           className="object-cover object-top-left"
         />
       </div>

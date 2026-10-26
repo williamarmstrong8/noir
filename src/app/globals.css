@@ -139,7 +139,8 @@
       scroll-behavior: auto;
     }
 
-    [data-reveal] {
+    [data-reveal],
+    .demo-in {
       opacity: 1 !important;
       transform: none !important;
     }
@@ -149,6 +150,19 @@
     *::after {
       animation-duration: 0s !important;
       transition-duration: 0s !important;
+    }
+  }
+}
+
+@layer components {
+  .demo-in {
+    transition:
+      opacity 400ms ease-out,
+      transform 400ms ease-out;
+
+    &[data-pending="true"] {
+      opacity: 0;
+      transform: translateY(6px);
     }
   }
 }

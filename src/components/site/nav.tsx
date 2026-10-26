@@ -21,10 +21,10 @@ export function Nav() {
       data-scrolled={scrolled}
       className="sticky top-0 z-40 border-b border-transparent transition-colors duration-300 data-[scrolled=true]:border-border data-[scrolled=true]:bg-background/70 data-[scrolled=true]:backdrop-blur-md"
     >
-      <div className="container-page flex h-16 items-center justify-between">
+      <div className="container-page grid h-16 grid-cols-[1fr_auto] items-center md:grid-cols-[1fr_auto_1fr]">
         <Wordmark />
-        <nav aria-label="Main" className="hidden items-center gap-8 md:flex">
-          <ul className="flex items-center gap-7">
+        <nav aria-label="Main" className="hidden md:block">
+          <ul className="flex items-center gap-8">
             {navItems.map((item) => (
               <li key={item.id}>
                 <a
@@ -36,9 +36,14 @@ export function Nav() {
               </li>
             ))}
           </ul>
-          <BookButton size="default" className="h-9 px-3.5" />
         </nav>
-        <MobileNav />
+        <div className="flex justify-end">
+          <BookButton
+            size="default"
+            className="hidden h-9 px-3.5 md:inline-flex"
+          />
+          <MobileNav />
+        </div>
       </div>
     </header>
   );
