@@ -1,13 +1,15 @@
 import { Reveal } from "@/components/motion/reveal";
+import { Rule } from "@/components/motion/rule";
 import { BookButton } from "@/components/site/book-button";
 import { site } from "@/data/site";
 
 export function FinalCta() {
   return (
-    <section aria-labelledby="cta-title" className="border-t">
+    <section aria-labelledby="cta-title" className="relative">
+      <Rule />
       <div className="container-page section-y">
         <Reveal>
-          <h2 id="cta-title" className="text-display max-w-[12ch]">
+          <h2 id="cta-title" data-split className="text-display max-w-[12ch]">
             Let&apos;s build yours.
           </h2>
         </Reveal>

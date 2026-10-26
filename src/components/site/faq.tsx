@@ -12,7 +12,7 @@ export function Faq() {
   return (
     <Section copy={sections.faq}>
       <div className="grid-page">
-        <Reveal className="col-span-12 lg:col-span-9 lg:col-start-4">
+        <Reveal className="col-span-12">
           <Accordion type="single" collapsible className="border-y">
             {faqs.map((faq) => (
               <AccordionItem key={faq.question} value={faq.question}>

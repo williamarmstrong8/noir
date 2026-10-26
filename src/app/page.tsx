@@ -1,3 +1,4 @@
+import { Banner } from "@/components/site/banner";
 import { Faq } from "@/components/site/faq";
 import { FinalCta } from "@/components/site/final-cta";
 import { Footer } from "@/components/site/footer";
@@ -19,6 +20,7 @@ export default function Home() {
       >
         Skip to content
       </a>
+      <Banner />
       <Nav />
       <main id="top">
         <Hero />

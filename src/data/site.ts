@@ -87,13 +87,19 @@ export const sections: Record<SectionId, SectionCopy> = {
   },
 };
 
+// TODO: replace with your real offer, or remove <Banner /> from page.tsx.
+export const banner = {
+  offer: "50% off your first site.",
+  detail: "Limited spots this month.",
+  cta: "Book a call",
+};
+
 export const navItems = Object.values(sections).filter((s) => s.inNav);
 
 export const site = {
   name: "Noir",
-  positioning: "Fast, good-looking websites that bring in customers.",
-  heroLine:
-    "I design and build sites for local businesses. You get a clear price and a site that works.",
+  positioning: "Websites for NYC boutiques.",
+  heroLine: "Fixed prices from $1,500. Live in 7 days.",
   // TODO: replace with your real Cal.com link.
   bookingUrl: "https://cal.com/TODO/15min",
   // TODO: replace with your real contact email.

@@ -13,7 +13,10 @@ export function Process() {
             index={i}
             className="grid-page gap-y-3 border-t py-10 lg:items-baseline lg:py-12"
           >
-            <span className="text-heading col-span-12 font-mono font-normal text-signal lg:col-span-3">
+            <span
+              data-split
+              className="text-heading col-span-12 font-mono font-normal text-signal lg:col-span-3"
+            >
               {String(i + 1).padStart(2, "0")}
             </span>
             <h3 className="col-span-12 text-2xl font-semibold tracking-[-0.03em] lg:col-span-3">

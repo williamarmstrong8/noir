@@ -103,7 +103,7 @@ export async function renderIcon(size: number) {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        background: "#ff6b2c",
+        background: "#fafafa",
         borderRadius: size * 0.22,
         color: "#000000",
         fontFamily: "Geist",

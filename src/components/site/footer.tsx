@@ -1,5 +1,6 @@
 import { cacheLife } from "next/cache";
 import { Reveal } from "@/components/motion/reveal";
+import { Rule } from "@/components/motion/rule";
 import { Logo } from "@/components/site/logo";
 import { site } from "@/data/site";
 
@@ -11,22 +12,25 @@ async function copyrightYear() {
 
 export async function Footer() {
   return (
-    <footer className="border-t">
-      <div className="container-page pt-10 pb-6 lg:pb-10">
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-          <a
-            href={`mailto:${site.email}`}
-            className="w-fit rounded-lg text-sm text-muted-foreground transition-colors hover:text-foreground"
-          >
-            {site.email}
-          </a>
-          <p className="text-sm text-muted-foreground">
-            © {await copyrightYear()} {site.name}
-          </p>
+    <footer className="relative">
+      <Rule />
+      <div className="container-page pt-16 pb-6 lg:pb-10">
+        <div className="grid-page items-end gap-y-10">
+          <Reveal variant="clip" className="col-span-12 lg:col-span-8">
+            <Logo className="h-auto w-full text-foreground" />
+          </Reveal>
+          <div className="col-span-12 flex flex-col gap-2 lg:col-span-4 lg:items-end lg:text-right">
+            <a
+              href={`mailto:${site.email}`}
+              className="w-fit rounded-lg text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              {site.email}
+            </a>
+            <p className="text-sm text-muted-foreground">
+              © {await copyrightYear()} {site.name}
+            </p>
+          </div>
         </div>
-        <Reveal className="mt-16 lg:mt-24">
-          <Logo className="h-auto w-full text-foreground" />
-        </Reveal>
       </div>
     </footer>
   );

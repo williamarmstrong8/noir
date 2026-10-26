@@ -1,25 +1,59 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BookButton } from "@/components/site/book-button";
 import { MobileNav } from "@/components/site/mobile-nav";
 import { Wordmark } from "@/components/site/wordmark";
 import { navItems } from "@/data/site";
+import { gsap, MOTION_OK, useGSAP } from "@/lib/gsap";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const [inverted, setInverted] = useState(false);
+  const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 8);
+      // Invert while the nav overlaps a light section.
+      const mid = 32;
+      setInverted(
+        Array.from(
+          document.querySelectorAll<HTMLElement>('[data-tone="light"]'),
+        ).some((el) => {
+          const r = el.getBoundingClientRect();
+          return r.top <= mid && r.bottom >= mid;
+        }),
+      );
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useGSAP(() => {
+    gsap.matchMedia().add(MOTION_OK, () => {
+      gsap.fromTo(
+        ref.current,
+        { autoAlpha: 0, yPercent: -100 },
+        {
+          autoAlpha: 1,
+          yPercent: 0,
+          duration: 1.2,
+          ease: "expo.out",
+          delay: 0.1,
+        },
+      );
+    });
+  });
+
   return (
     <header
+      ref={ref}
+      data-intro
       data-scrolled={scrolled}
-      className="sticky top-0 z-40 border-b border-transparent transition-colors duration-300 data-[scrolled=true]:border-border data-[scrolled=true]:bg-background/70 data-[scrolled=true]:backdrop-blur-md"
+      data-inverted={inverted}
+      className={`${inverted ? "theme-light " : ""}sticky top-0 z-40 border-b border-transparent bg-background text-foreground transition-colors duration-300 data-[scrolled=true]:border-border`}
     >
       <div className="container-page grid h-16 grid-cols-[1fr_auto] items-center md:grid-cols-[1fr_auto_1fr]">
         <Wordmark />

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Oswald } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { site } from "@/data/site";
 import "./globals.css";
@@ -8,6 +8,13 @@ const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
   display: "optional",
+});
+
+const display = Oswald({
+  variable: "--font-display",
+  weight: ["500"],
+  subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
@@ -42,12 +49,12 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${display.variable}`}>
       <body>
         {children}
         {process.env.VERCEL && <Analytics />}
         <noscript>
-          <style>{`[data-reveal],.demo-in{opacity:1!important;transform:none!important}[data-untyped]{visibility:visible!important}`}</style>
+          <style>{`[data-reveal],[data-intro]{visibility:visible!important}`}</style>
         </noscript>
       </body>
     </html>
